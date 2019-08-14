@@ -1,5 +1,6 @@
 Feature: Notepad plus
 
+  @test
   Scenario: Open Notepad plus and save the document
     Given user opened the notepad plus
     When user entered some random text
