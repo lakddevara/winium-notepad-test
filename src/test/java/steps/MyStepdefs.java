@@ -21,7 +21,7 @@ public class MyStepdefs {
     public void userOpenedTheNotepadPlus() throws InterruptedException {
 
         String notepadAppPath = "C:\\Program Files (x86)\\Notepad++\\notepad++.exe";
-        String winiumDriverPath = "C:\\Users\\KODEV\\IdeaProjects\\winiumTestProject\\Winium.Desktop.Driver.exe";
+        String winiumDriverPath = ".\\Winium.Desktop.Driver.exe";
         DesktopOptions options = new DesktopOptions();
         options.setApplicationPath(notepadAppPath);
         WiniumDriverService service = new WiniumDriverService.Builder().usingDriverExecutable
