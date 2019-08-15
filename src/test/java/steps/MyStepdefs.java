@@ -5,6 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 import org.openqa.selenium.winium.WiniumDriverService;
@@ -40,16 +41,12 @@ public class MyStepdefs {
     }
 
     @Then("^user saved the notepad file$")
-    public void userSavedTheNotepadFile() throws AWTException {
-        Robot robo = new Robot();
-        robo.mouseMove(82,191);
-        robo.delay(2000);
-        robo.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robo.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        driver.findElement(By.id("1001")).sendKeys("testingFile");
+    public void userSavedTheNotepadFile() throws AWTException, InterruptedException {
+        Actions act = new Actions(driver);
+        act.moveByOffset(82,191).click().perform();
+        Thread.sleep(2000);
+        driver.findElement(By.id("1001")).sendKeys("testingFile.txt");
         driver.findElement(By.name("Save")).click();
-        driver.close();
-        driver.quit();
     }
 
 
